@@ -16,6 +16,15 @@
         font-family: 'Roboto', sans-serif;
         background-color: rgba(0,0,0,0.025);
       }
+      
+      a {
+        text-decoration: none;
+        color: #77828D;
+      }
+      
+      a:hover {
+        text-decoration: underline;
+      }
 
       .cf:after {
         content: ' ';
@@ -116,7 +125,7 @@
       .post .ribbon {
         width: 100%;
         height: 10px;
-        background-image: url('images/airmail.png');
+        background-image: url('https://dl.dropboxusercontent.com/u/18536100/airmail.png');
         background-position: center;
         background-size: cover;
       }
@@ -149,11 +158,19 @@
 
       .post-footer {
         border-top: solid 1px rgba(0,0,0,0.1);
-        padding-top: 10px;
+        padding-top: 15px;
+        font-size: 14pt;
       }
 
       .post-footer .badge {
-        margin-right: 15px;
+        margin-left: 15px;
+        float: right;
+      }
+
+      @media(max-width: 768px) {
+        .post-footer {
+          font-size: 12pt;
+        }        
       }
 
       .post-footer .badge .heart {
@@ -163,17 +180,20 @@
       .post-body p {
         line-height: 2em;
         font-family: Georgia;
-        font-size: 16pt;     
+        font-size: 14pt;     
         letter-spacing: 0.01rem;
       }
 
-      .post-body p.caption {
-        font-size: 14pt;
+      .post-body div.caption {
         margin-left: 20px; 
         padding-left: 15px; 
         border-left: solid gainsboro 3px;
         color: rgba(0,0,0,0.45);
         font-style: italic;
+      }
+      
+      .post-body div.caption p {
+        font-size: 12pt;
       }
 
       .post-body p.quote {
@@ -185,10 +205,10 @@
       }
 
       .post-body p.source {
-        margin-top: 5px;
+        margin-top: 10px;
         font-family: 'Roboto', sans-serif;
         font-weight: bold;
-        font-size: 14pt;
+        font-size: 12pt;
         display: inline-block;
         float: right;
       }
@@ -212,8 +232,8 @@
           font-size: 12pt;
         }
 
-        .post-body p.caption {
-          font-size: 12pt;          
+        .post-body div.caption p{
+          font-size: 10pt;          
         } 
 
         .post-body p.quote {
@@ -221,7 +241,7 @@
         }
 
         .post-body p.source {
-          font-size: 11pt;
+          font-size: 10pt;
         }
       }
 
@@ -234,6 +254,68 @@
       .badge.timestamp {
         float: right;
       }
+
+      .post-footer .permalink a{
+        color: rgba(0,0,0,0.3);
+      }
+
+      #spinner {
+        font-size: 24pt;
+        text-align: center;
+        margin-bottom: 25px;
+        display: none;
+      }
+
+      .link-thumbnail {
+        background-color: gainsboro;
+        width: 100%;
+        height: 150px;
+        background-position: center;
+        background-size: cover; 
+        box-sizing: border-box;
+      }
+
+      .post-body .link-description {
+        padding: 25px 0px;
+        box-sizing: border-box;
+      }
+
+      .post-body .link-description a.link-name {
+        color: #4865A6;
+        font-size: 20pt;        
+        display: inline-block;
+      }
+
+      .post-body .link-description a.link-name .fa {
+        color: rgba(0,0,0,0.2);
+      }
+
+      .post-body .link-description .link-text {
+        font-size: 12pt;
+        color: rgba(0,0,0,0.4);
+      }
+
+      .post-body .chat-wrapper {
+        padding: 25px 0px;
+      }
+
+      .post-body .chat-wrapper table {
+        font-size: 12pt;
+        table-layout: fixed;
+        line-height: 1.5rem;
+        width: 100%;
+      }
+      
+      .post-body .chat-wrapper table tr td{
+        padding: 7.5px 0px;
+      }
+      .post-body .chat-wrapper table tr td:first-child{
+        width: 15%;
+        text-align: right;
+        font-weight: bold;
+        padding-right: 15px;
+      }
+
     </style>
   </head>
   <body>
@@ -271,13 +353,21 @@
                 -Lang Leav
               </p>
             </div>
-            <div class="post-footer">
+            <div class="post-footer cf">
+              <span class="permalink">
+                <a href="">Permalink</a>
+              </span>
+              
               <span class="badge">
                 122 <i class="fa fa-heart heart"></i>
               </span>
 
               <span class="badge">
                 122 <i class="fa fa-repeat"></i>
+              </span>
+
+              <span class="badge">
+                122 Notes
               </span>
             </div>  
           </div>
@@ -291,9 +381,17 @@
           <div class="post-inner"> 
             <small><i class="fa fa-clock-o"></i> Posted on 15 JUN 2014</small>  
             <div class="post-body">
-              <p class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate nesciunt, quia optio. Magni quibusdam, quo recusandae ab porro amet veritatis?</p>
+              <div class="caption">
+                <p>
+                  <a href="">Hello</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate nesciunt, quia optio. Magni quibusdam, quo recusandae ab porro amet veritatis?
+                </p>
+              </div>
             </div>
-            <div class="post-footer">
+            <div class="post-footer cf">
+              <span class="permalink">
+                <a href="">Permalink</a>
+              </span>
+
               <span class="badge">
                 122 <i class="fa fa-heart heart"></i>
               </span>
@@ -319,7 +417,11 @@
               </p>
               <p class="source">- Lee Wee Nee</p>
             </div>
-            <div class="post-footer">
+            <div class="post-footer cf">
+              <span class="permalink">
+                <a href="">Permalink</a>
+              </span>
+
               <span class="badge">
                 122 <i class="fa fa-heart heart"></i>
               </span>
@@ -331,7 +433,80 @@
           </div>
         </div>
         <!-- End of Quote Post -->
-      </div>
+          
+        <!-- Link Post -->
+        <div class="post">
+          <div class="ribbon"></div>
+          <div class="post-inner">
+            <small><i class="fa fa-clock-o"></i> Posted on 15 JUN 2014</small>        
+            <div class="post-body cf">
+              <div class="link-description">
+                <a class="link-name" href="">10 Things You Need to Know Now</a>
+                <p class="link-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio at consequatur, voluptatum quis nam id ab? Sit recusandae deserunt, amet.</p>
+                <p class="link-host">Google.com</p>
+              </div>
+            </div>
+            <div class="post-footer cf">
+              <span class="permalink">
+                <a href="">Permalink</a>
+              </span>
+
+              <span class="badge">
+                122 <i class="fa fa-heart heart"></i>
+              </span>
+
+              <span class="badge">
+                122 <i class="fa fa-repeat"></i>
+              </span>
+            </div>  
+          </div>
+        </div>
+        <!-- End of Link Post -->
+        
+
+        <!-- Chat Post -->
+        <div class="post">
+          <div class="ribbon"></div>
+          <div class="post-inner">
+            <div class="post-title">
+              <h3>Love & Misadventures</h3>
+              <small><i class="fa fa-clock-o"></i> Posted on 15 JUN 2014</small>        
+            </div>       
+            <div class="post-body cf">
+              <div class="chat-wrapper">
+                <table>
+                  <tr>
+                    <td>Max:</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, corporis.</td>
+                  </tr>
+                  <tr>
+                    <td>Marcus:</td>
+                    <td>Lorem ipsum dolor sit amet.</td>
+                  </tr>
+                </table>                
+              </div>
+            </div>
+            <div class="post-footer cf">
+              <span class="permalink">
+                <a href="">Permalink</a>
+              </span>
+
+              <span class="badge">
+                122 <i class="fa fa-heart heart"></i>
+              </span>
+
+              <span class="badge">
+                122 <i class="fa fa-repeat"></i>
+              </span>
+            </div>  
+          </div>
+        </div>
+        <!-- End of Chat Post -->
+
+        <div id="spinner">
+          <i class="fa fa-refresh fa-spin"></i>
+        </div>
+      </div>      
     </div>
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery.js"></script>
@@ -339,18 +514,30 @@
       $(function(){
         var header = $('#header');
         var headerTitle = $('#header-title h1');
+        // var totalPages = {TotalPages};
+        // var currentPage = {CurrentPage};
+
         $(window).scroll(function(){
           var w = $(window);
           var width = w.width();
           var pos = w.scrollTop();
           var height = w.height() / 2;
           var opacity = pos / height;
-
           header.css('opacity', 1 - opacity);
           if (width > 1200) {
             var margin = opacity * 150 < 150 ? opacity * 150 : 0;
             headerTitle.css('margin-top', margin + 'px');
           }
+
+          // if($(window).scrollTop() + $(window).height() == $(document).height()) {
+          //   if (currentPage + 1 <= totalPages) {
+          //     currentPage += 1;
+          //     $.get('page/' + currentPage, function(data){
+          //       var page = $(data).find('.container')[0];
+          //       $('.container').append(page.innerHTML);
+          //     });
+          //   }
+          // }
         });
       });
     </script>
