@@ -16,7 +16,13 @@
         font-family: 'Roboto', sans-serif;
         background-color: rgba(0,0,0,0.025);
       }
-      
+
+      .cf:after {
+        content: ' ';
+        display: block;
+        clear: both;
+      }
+        
       .fa {
         padding-left: 5px;
         padding-right: 5px; 
@@ -27,18 +33,31 @@
       }
 
       #header-wrapper {
-        background-image: url('https://d262ilb51hltx0.cloudfront.net/fit/c/2000/1600/gradv/29/81/40/darken/50/blur/50/1*HXRO-Y-u936Srw0tm16Clw.jpeg');
+        background-image: url('https://dl.dropboxusercontent.com/u/18536100/sg_blur.png');
+        background-position: center;
+        background-size: cover;
       }
 
       #header {
-        background-image: url('https://d262ilb51hltx0.cloudfront.net/fit/c/2000/1600/gradv/29/81/60/darken/25/1*HXRO-Y-u936Srw0tm16Clw.jpeg');
+        background-image: url('https://dl.dropboxusercontent.com/u/18536100/sg.png');
         background-position: center;
         background-size: cover;
+        background-color: #0c0c1b;
         height: 400px;
         width: 100%;
         display: table;
         text-align: center;
         overflow-y: hidden;       
+      }
+
+      @media(max-width: 768px) {
+        #header-wrapper {
+          background-image: url('https://dl.dropboxusercontent.com/u/18536100/sg_sm_blur.png');
+        }
+
+        #header {
+          background-image: url('https://dl.dropboxusercontent.com/u/18536100/sg_sm.png');
+        }
       }
       
       #header div {
@@ -68,7 +87,7 @@
         }
 
         #header div p {
-          font-size: 14pt;
+          font-size: 12pt;
           padding: 0px 25px;
         }
       }
@@ -141,17 +160,37 @@
         color: #cc6055;
       }
 
-
-      /*.post-body p:first-letter{
-        font-size: 50pt;
-        padding-right: 15px; 
-      }*/
-
-      .post-body p{
+      .post-body p {
         line-height: 2em;
         font-family: Georgia;
-        font-size: 20px;     
+        font-size: 16pt;     
         letter-spacing: 0.01rem;
+      }
+
+      .post-body p.caption {
+        font-size: 14pt;
+        margin-left: 20px; 
+        padding-left: 15px; 
+        border-left: solid gainsboro 3px;
+        color: rgba(0,0,0,0.45);
+        font-style: italic;
+      }
+
+      .post-body p.quote {
+        line-height: 2em;
+        font-size: 18pt;
+        color: rgba(0,0,0,0.6);
+        font-style: italic;
+        margin-bottom: 0px;
+      }
+
+      .post-body p.source {
+        margin-top: 5px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 14pt;
+        display: inline-block;
+        float: right;
       }
 
       .container {
@@ -169,8 +208,20 @@
           padding-top: 25px;
         }
 
-        #main p{       
-          font-size: 18px;
+        .post-body p{       
+          font-size: 12pt;
+        }
+
+        .post-body p.caption {
+          font-size: 12pt;          
+        } 
+
+        .post-body p.quote {
+          font-size: 12pt;
+        }
+
+        .post-body p.source {
+          font-size: 11pt;
         }
       }
 
@@ -178,6 +229,10 @@
         .container {
           width: auto;
         }
+      }
+
+      .badge.timestamp {
+        float: right;
       }
     </style>
   </head>
@@ -192,6 +247,7 @@
     </div>
     <div id="main">
       <div class="container">
+        <!-- Text Post -->
         <div class="post">
           <div class="ribbon"></div>
           <div class="post-inner"> 
@@ -226,16 +282,16 @@
             </div>  
           </div>
         </div>
+        <!-- End of Text Posts -->
 
+        <!-- Photo Post -->
         <div class="post">
           <div class="ribbon"></div>
           <img src="http://37.media.tumblr.com/b3e9ffb03b2344fcd55aa53ff27ea66a/tumblr_n4cq76omLS1rutr4uo2_1280.jpg" class="post-image" />
           <div class="post-inner"> 
-            <div class="post-title">
-              <h3>Love & Misadventures</h3>
-              <small><i class="fa fa-clock-o"></i> Posted on 15 JUN 2014</small>        
-            </div>
-            <div class="post-body">                       
+            <small><i class="fa fa-clock-o"></i> Posted on 15 JUN 2014</small>  
+            <div class="post-body">
+              <p class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate nesciunt, quia optio. Magni quibusdam, quo recusandae ab porro amet veritatis?</p>
             </div>
             <div class="post-footer">
               <span class="badge">
@@ -248,6 +304,33 @@
             </div>  
           </div>
         </div>
+        <!-- End of Photo Post -->
+
+        <!-- Quote Post -->
+        <div class="post">
+          <div class="ribbon"></div>
+          <div class="post-inner"> 
+            <small><i class="fa fa-clock-o"></i> Posted on 15 JUN 2014</small>  
+            <div class="post-body cf">
+              <p class="quote">
+                <span>&#8220 </span>
+                The most important things are kept in the heart.  
+                <span> &#8221</span>
+              </p>
+              <p class="source">- Lee Wee Nee</p>
+            </div>
+            <div class="post-footer">
+              <span class="badge">
+                122 <i class="fa fa-heart heart"></i>
+              </span>
+
+              <span class="badge">
+                122 <i class="fa fa-repeat"></i>
+              </span>
+            </div>  
+          </div>
+        </div>
+        <!-- End of Quote Post -->
       </div>
     </div>
     <!-- jQuery -->
